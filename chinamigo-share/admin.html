@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChinaMigo 后台</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <main class="admin-shell">
+      <section class="login-card" data-login>
+        <p class="eyebrow">ChinaMigo 后台</p>
+        <h1>内容运营中心</h1>
+        <p>管理攻略、行程、客户咨询和素材。</p>
+        <form class="login-form" data-login-form>
+          <label>
+            用户名
+            <input name="username" autocomplete="username" value="admin" required />
+          </label>
+          <label>
+            密码
+            <input name="password" autocomplete="current-password" type="password" required />
+          </label>
+          <button type="submit">登录</button>
+        </form>
+        <p class="status" data-login-status></p>
+      </section>
+
+      <section class="dashboard is-hidden" data-dashboard>
+        <header class="admin-header">
+          <div>
+            <p class="eyebrow">ChinaMigo 后台</p>
+            <h1>运营工作台</h1>
+          </div>
+          <div class="admin-actions">
+            <a href="/" target="_blank" rel="noreferrer">查看网站</a>
+            <button type="button" data-logout>退出</button>
+          </div>
+        </header>
+
+        <nav class="admin-tabs" aria-label="后台模块">
+          <button class="is-active" type="button" data-tab="overview">总览</button>
+          <button type="button" data-tab="inquiries">客户咨询</button>
+          <button type="button" data-tab="guides">攻略管理</button>
+          <button type="button" data-tab="cities">城市内容</button>
+          <button type="button" data-tab="experiences">行程方案</button>
+          <button type="button" data-tab="templates">模板中心</button>
+          <button type="button" data-tab="media">素材中心</button>
+        </nav>
+
+        <section class="admin-panel" data-panel="overview">
+          <div class="section-heading">
+            <div>
+              <h2>总览</h2>
+              <p>查看待处理事项、近期咨询和内容健康状态。</p>
+            </div>
+            <div class="overview-actions">
+              <button type="button" data-overview-action="new-guide">新建攻略</button>
+              <button class="secondary" type="button" data-overview-action="new-city">新建城市</button>
+              <button class="secondary" type="button" data-overview-action="new-experience">新建行程</button>
+              <button class="secondary" type="button" data-overview-action="upload-media">上传素材</button>
+            </div>
+          </div>
+          <section class="overview-alert" data-priority-alert></section>
+          <section class="overview-focus" data-daily-focus></section>
+          <div class="overview-continue" data-continue-edit></div>
+          <div class="stat-grid" data-stats></div>
+          <div class="overview-operating" data-operating-status></div>
+          <div class="overview-workbench">
+            <section class="overview-card">
+              <div class="overview-card-head">
+                <p class="eyebrow">待处理事项</p>
+                <button class="secondary" type="button" data-overview-tab="inquiries">去处理</button>
+              </div>
+              <div class="overview-task-list" data-todo-items></div>
+            </section>
+            <section class="overview-card">
+              <div class="overview-card-head">
+                <p class="eyebrow">内容健康检查</p>
+                <button class="secondary" type="button" data-overview-tab="guides">查看内容</button>
+              </div>
+              <div class="overview-task-list" data-health-items></div>
+            </section>
+          </div>
+          <div class="overview-columns">
+            <section class="overview-card">
+              <div class="overview-card-head">
+                <h3>最近客户咨询</h3>
+                <button class="secondary" type="button" data-overview-tab="inquiries">全部咨询</button>
+              </div>
+              <div class="overview-inquiries" data-latest-inquiries></div>
+            </section>
+            <section class="overview-card">
+              <div class="overview-card-head">
+                <h3>最近编辑</h3>
+                <span>继续修改内容</span>
+              </div>
+              <div class="overview-edits" data-recent-edits></div>
+            </section>
+          </div>
+          <div class="overview-columns">
+            <section class="overview-card">
+              <div class="overview-card-head">
+                <h3>AI 运营建议</h3>
+                <span>主动发现机会</span>
+              </div>
+              <div class="overview-suggestions" data-ai-suggestions></div>
+            </section>
+            <section class="overview-card">
+              <div class="overview-card-head">
+                <h3>系统状态</h3>
+                <span>站点与关键流程</span>
+              </div>
+              <div class="overview-system" data-system-status></div>
+            </section>
+          </div>
+          <section class="overview-card">
+            <div class="overview-card-head">
+              <h3>最近活动</h3>
+              <span>后台动态</span>
+            </div>
+            <div class="overview-activity" data-recent-activity></div>
+          </section>
+        </section>
+
+        <section class="admin-panel is-hidden" data-panel="inquiries">
+          <div class="section-heading">
+            <h2>客户咨询</h2>
+            <p>处理新的定制需求、跟进状态和内部备注。</p>
+          </div>
+          <div class="inquiry-crm-stats" data-inquiry-crm-stats></div>
+          <div class="crm-filter-chips">
+            <button type="button" data-crm-filter="needs-reply">待回复</button>
+            <button type="button" data-crm-filter="stale">超过3天未跟进</button>
+            <button type="button" data-crm-filter="high-intent">高意向客户</button>
+            <button type="button" data-crm-filter="luxury">Luxury 客户</button>
+            <button type="button" data-crm-filter="shanghai">上海客户</button>
+            <button type="button" data-crm-filter="family">家庭出行</button>
+            <button class="secondary" type="button" data-crm-filter="">清除筛选</button>
+          </div>
+          <div class="inquiry-toolbar">
+            <input data-inquiry-search placeholder="搜索姓名、邮箱、WhatsApp 或备注" />
+            <select data-filter-status>
+              <option value="">全部状态</option>
+              <option value="new">新咨询</option>
+              <option value="replied">已回复</option>
+              <option value="following">跟进中</option>
+              <option value="confirmed">已确认</option>
+              <option value="won">已成交</option>
+              <option value="lost">已流失</option>
+              <option value="spam">垃圾</option>
+            </select>
+            <input data-filter-city placeholder="城市" />
+            <input data-filter-dates placeholder="出行日期" />
+            <input data-filter-created placeholder="提交日期" />
+            <input data-filter-stay placeholder="住宿偏好" />
+            <input data-filter-travelers placeholder="人数" />
+            <details class="more-menu export-menu">
+              <summary>更多操作</summary>
+              <div>
+                <button type="button" data-export-inquiries>导出数据</button>
+              </div>
+            </details>
+          </div>
+          <div class="list" data-inquiries-list></div>
+          <aside class="inquiry-detail is-hidden" data-inquiry-detail></aside>
+        </section>
+
+        <section class="admin-panel is-hidden" data-panel="guides">
+          <div class="section-heading">
+            <div>
+              <h2>攻略管理</h2>
+              <p>上传 Word 攻略，预览成品页面，检查内容完整度，然后发布。</p>
+            </div>
+            <div class="guide-list-actions">
+              <button type="button" data-new-guide>新建攻略</button>
+              <button class="secondary" type="button" data-docx-upload data-import-docx-new>导入 Word</button>
+            </div>
+          </div>
+          <div class="guide-toolbar">
+            <input data-guide-search placeholder="搜索攻略" />
+            <select data-guide-filter-city><option value="">全部城市</option></select>
+            <select data-guide-filter-category><option value="">全部分类</option></select>
+            <select data-guide-filter-language><option value="">全部语言</option><option value="en">英文已完成</option><option value="cn">中文已完成</option><option value="missing-cn">缺少中文</option></select>
+            <select data-guide-filter-status><option value="">全部状态</option><option value="draft">草稿</option><option value="published">已发布</option><option value="scheduled">定时发布</option><option value="archived">已归档</option></select>
+            <input data-guide-filter-date placeholder="发布日期" />
+            <select data-guide-sort><option value="updated">按最近编辑</option><option value="published">按发布时间</option><option value="title">按标题</option></select>
+          </div>
+          <div class="guide-quick-filters">
+            <button type="button" data-guide-quick-filter="">全部内容</button>
+            <button type="button" data-guide-quick-filter="draft">待发布</button>
+            <button type="button" data-guide-quick-filter="recent">最近编辑</button>
+            <button type="button" data-guide-quick-filter="weekly">本周新增</button>
+            <button type="button" data-guide-quick-filter="missing-cn">缺中文</button>
+            <button type="button" data-guide-quick-filter="missing-cover">缺封面</button>
+            <button type="button" data-guide-quick-filter="incomplete">未完成</button>
+          </div>
+
+          <details class="guide-collections-admin">
+            <summary>
+              <span>精选合集管理</span>
+              <small>控制 China Guides 首页的 Featured Collections</small>
+            </summary>
+            <div class="guide-collections-workspace">
+              <div class="guide-collections-list" data-guide-collections-list></div>
+              <form class="guide-collection-form" data-guide-collection-form>
+                <input name="id" type="hidden" />
+                <input name="image" type="hidden" />
+                <label>合集名称<input name="title" placeholder="Transportation Essentials" required /></label>
+                <label>一句说明<textarea name="description" rows="3" placeholder="High-speed rail, stations and practical movement through China."></textarea></label>
+                <label>关联分类<input name="categories" placeholder="Transportation, Food & Cafes" /></label>
+                <input name="guideSlugs" type="hidden" />
+                <div class="guide-picker-field">
+                  <div>
+                    <strong>入选攻略</strong>
+                    <span>从已发布攻略里勾选，不需要填写 URL 标识。</span>
+                  </div>
+                  <div class="guide-collection-guide-picker" data-guide-collection-guide-picker></div>
+                </div>
+                <div class="form-grid">
+                  <label>排序<input name="sortOrder" type="number" min="1" value="10" /></label>
+                  <label>状态<select name="active"><option value="true">启用</option><option value="false">隐藏</option></select></label>
+                </div>
+                <div class="guide-collection-image">
+                  <img data-guide-collection-image-preview src="/assets/guide-first-time-china.png" alt="" />
+                  <div>
+                    <strong>合集图片</strong>
+                    <span>用于 Featured Collections 卡片。可以从素材中心选择。</span>
+                    <button class="secondary" type="button" data-open-media-picker="guide-collection-image">从素材库选择图片</button>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="submit">保存合集</button>
+                  <button class="secondary" type="button" data-new-guide-collection>新建合集</button>
+                </div>
+              </form>
+            </div>
+          </details>
+
+          <div class="guide-cms-layout">
+            <div class="guide-list" data-guides-list></div>
+
+            <form class="guide-editor" data-guide-form>
+              <input name="id" type="hidden" />
+              <div class="sticky-editor-actions">
+                <button class="secondary" type="button" data-close-guide-editor>攻略列表</button>
+                <div class="editing-status">
+                  <span>正在编辑：<strong data-editor-title>未命名攻略</strong></span>
+                  <small data-unsaved-state>刚刚已保存</small>
+                </div>
+                <button class="secondary" type="submit">保存</button>
+                <button type="button" data-publish-guide>发布</button>
+              </div>
+
+              <section class="simple-editor-shell">
+                <div class="editor-mode-bar">
+                  <div class="language-tabs">
+                    <button class="is-active" type="button" data-lang-tab="en">英文</button>
+                    <button type="button" data-lang-tab="cn">中文</button>
+                    <span class="translation-sync-pill" data-translation-sync>中文待翻译</span>
+                  </div>
+                  <div class="mode-switcher">
+                    <button class="is-active" type="button" data-editor-mode="edit">编辑</button>
+                    <button type="button" data-editor-mode="preview">预览</button>
+                  </div>
+                  <button class="secondary review-toggle" type="button" data-toggle-review-panel>检查助手</button>
+                </div>
+
+                <input data-docx-file type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+
+                <div class="preview-workspace is-hidden" data-editor-mode-panel="preview">
+                  <main class="preview-canvas">
+                    <div class="language-panel" data-lang-panel="en">
+                      <article class="guide-preview fast-preview" data-fast-preview="en"></article>
+                    </div>
+                    <div class="language-panel is-hidden" data-lang-panel="cn">
+                      <article class="guide-preview fast-preview" data-fast-preview="cn"></article>
+                    </div>
+                  </main>
+                </div>
+
+                <div class="writing-workspace" data-editor-mode-panel="edit">
+                  <main class="writing-canvas">
+                    <div class="edit-panel" data-edit-panel>
+                      <details class="content-settings">
+                        <summary>
+                          <span>内容设置</span>
+                          <small>分类、城市、标签、发布状态和 SEO 基础</small>
+                          <em class="content-settings-hints" data-content-settings-hint>检查内容完整度</em>
+                        </summary>
+                      <div class="article-meta-strip">
+                      <label>作者<input name="author" placeholder="ChinaMigo Editorial" /></label>
+                      <label>发布日期<input name="publishedAt" placeholder="2026-05-23" /></label>
+                      <label>状态<select name="status"><option value="draft">草稿</option><option value="published">已发布</option><option value="scheduled">定时发布</option><option value="archived">已归档</option></select></label>
+                      <label>内容分类<select name="category" required>
+                        <option value="Payments">Payments</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Apps & Digital Life">Apps & Digital Life</option>
+                        <option value="Food & Cafes">Food & Cafes</option>
+                        <option value="Shopping & Sourcing">Shopping & Sourcing</option>
+                        <option value="Beauty & Wellness">Beauty & Wellness</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                      </select></label>
+                      <label>城市<select name="city">
+                        <option value="">不限定城市</option>
+                        <option value="Shanghai">Shanghai</option>
+                        <option value="Beijing">Beijing</option>
+                        <option value="Shenzhen">Shenzhen</option>
+                        <option value="Hangzhou">Hangzhou</option>
+                        <option value="Guangzhou">Guangzhou</option>
+                        <option value="Chengdu">Chengdu</option>
+                      </select></label>
+                      <label>标签<input name="tags" placeholder="first-time visitor, luxury, shopping" /></label>
+                      <label>阅读时间<input name="readTime" readonly placeholder="自动计算" /></label>
+                      <label>精选<select name="featured"><option value="false">普通</option><option value="true">精选</option></select></label>
+                      <input name="slug" type="hidden" />
+                      <input name="coverImage" type="hidden" />
+                      <input name="mobileCoverImage" type="hidden" />
+                      <input name="coverAlt" type="hidden" />
+                      <input name="imagePosition" type="hidden" />
+                      <input name="seoTitleEn" type="hidden" />
+                      <input name="seoTitleCn" type="hidden" />
+                      <input name="metaDescriptionEn" type="hidden" />
+                      <input name="metaDescriptionCn" type="hidden" />
+                      <input name="ogImage" type="hidden" />
+                      <input name="canonicalUrl" type="hidden" />
+                      <input name="noindex" type="hidden" value="false" />
+                      </div>
+                    </details>
+
+                    <details class="hero-settings" data-hero-settings>
+                      <summary>
+                        <span>Hero 设置</span>
+                        <small>封面图、移动端封面和图片说明</small>
+                        <span class="hero-summary-actions">
+                          <button class="secondary" type="button" data-open-media-picker="guide-cover">从素材库选择封面</button>
+                          <button class="secondary" type="button" data-upload-guide-cover>本地上传</button>
+                        </span>
+                      </summary>
+                      <div class="cover-dropzone" data-cover-dropzone>
+                        <img data-cover-preview alt="" />
+                        <div>
+                          <strong>上传封面图</strong>
+                          <span>从素材库选择，或拖拽图片上传</span>
+                        </div>
+                        <div class="cover-dropzone-actions">
+                          <button class="secondary" type="button" data-open-media-picker="guide-cover">从素材库选择</button>
+                          <button class="secondary" type="button" data-upload-guide-cover>本地上传</button>
+                        </div>
+                        <input data-cover-file type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+                      </div>
+                    </details>
+
+                    <div class="ai-assist-bar">
+                      <span>AI 工作流</span>
+                      <button class="secondary" type="button" data-ai-action="beautify">整理成攻略版式</button>
+                      <button class="secondary" type="button" data-ai-action="spacing">优化阅读节奏</button>
+                      <button class="secondary" type="button" data-ai-action="format">转成攻略结构</button>
+                      <button class="secondary" type="button" data-ai-action="images">自动插入图片说明</button>
+                      <button class="secondary" type="button" data-ai-action="translate-cn">AI 生成中文版本</button>
+                    </div>
+
+                    <div class="selection-ai-toolbar is-hidden" data-selection-ai-toolbar>
+                      <span>选区 AI</span>
+                      <button class="secondary" type="button" data-selection-ai="improve">优化表达</button>
+                      <button class="secondary" type="button" data-selection-ai="shorten">缩短</button>
+                      <button class="secondary" type="button" data-selection-ai="expand">扩写</button>
+                      <button class="secondary" type="button" data-selection-ai="translate">翻译</button>
+                      <button class="secondary" type="button" data-selection-ai="faq">转 FAQ</button>
+                      <button class="secondary" type="button" data-selection-ai="extract">提取重点</button>
+                    </div>
+
+                    <div class="source-language-panel" data-source-lang-panel="en">
+                      <label class="editor-field-row"><span>标题</span><input class="article-title-input" name="titleEn" placeholder="攻略标题" required /></label>
+                      <label class="editor-field-row"><span>简介</span><textarea class="article-excerpt-input" name="excerptEn" rows="2" placeholder="攻略简介，用于前台卡片和 SEO 摘要"></textarea></label>
+                      <div class="document-editor">
+                        <div class="markdown-toolbar">
+                          <div class="editor-tool-group">
+                            <button class="secondary" type="button" data-editor-command="undo">撤回</button>
+                            <button class="secondary" type="button" data-editor-command="redo">恢复</button>
+                            <button class="secondary" type="button" data-format-inline="bold">加粗</button>
+                            <span class="editor-palette" aria-label="文字颜色">
+                              <span>文字</span>
+                              <button type="button" class="color-swatch" style="--swatch:#111111" data-format-inline="color" data-format-value="#111111" aria-label="黑色文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#6B5A45" data-format-inline="color" data-format-value="#6B5A45" aria-label="暖灰文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#8A5A2B" data-format-inline="color" data-format-value="#8A5A2B" aria-label="棕色文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#2F5F55" data-format-inline="color" data-format-value="#2F5F55" aria-label="绿色文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#355C8C" data-format-inline="color" data-format-value="#355C8C" aria-label="蓝色文字"></button>
+                            </span>
+                            <button class="secondary" type="button" data-format-inline="size">字号</button>
+                            <span class="editor-palette" aria-label="填充颜色">
+                              <span>填充</span>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#F3E7C8" data-format-inline="highlight" data-format-value="#F3E7C8" aria-label="米色填充"></button>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#E8EFE7" data-format-inline="highlight" data-format-value="#E8EFE7" aria-label="绿色填充"></button>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#E7EDF6" data-format-inline="highlight" data-format-value="#E7EDF6" aria-label="蓝色填充"></button>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#F1E6E0" data-format-inline="highlight" data-format-value="#F1E6E0" aria-label="暖粉填充"></button>
+                            </span>
+                          </div>
+                          <div class="editor-tool-group">
+                            <button class="secondary" type="button" data-insert-media="image" data-media-lang="en">插入图片</button>
+                            <button class="secondary" type="button" data-insert-media="gif" data-media-lang="en">插入动图</button>
+                            <button class="secondary" type="button" data-insert-media="audio" data-media-lang="en">插入音频</button>
+                            <button class="secondary" type="button" data-insert-media="video" data-media-lang="en">插入视频</button>
+                          </div>
+                          <span class="word-count" data-word-count="en">0 字</span>
+                        </div>
+                        <div class="visual-editor" data-visual-editor="en" contenteditable="true" aria-label="英文攻略正文"></div>
+                        <textarea class="raw-editor" data-raw-editor="en" placeholder="# First Time in China&#10;&#10;Paste your travel guide here. Use simple markdown:&#10;&#10;## Payments&#10;- Alipay&#10;- WeChat Pay&#10;&#10;![Cafe in Shanghai](assets/image.png)&#10;&#10;CTA: Chat on WhatsApp | https://wa.me/"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="source-language-panel is-hidden" data-source-lang-panel="cn">
+                      <label class="editor-field-row"><span>标题</span><input class="article-title-input" name="titleCn" placeholder="中文标题" /></label>
+                      <label class="editor-field-row"><span>简介</span><textarea class="article-excerpt-input" name="excerptCn" rows="2" placeholder="中文攻略简介，用于前台卡片和 SEO 摘要"></textarea></label>
+                      <div class="document-editor">
+                        <div class="markdown-toolbar">
+                          <div class="editor-tool-group">
+                            <button class="secondary" type="button" data-editor-command="undo">撤回</button>
+                            <button class="secondary" type="button" data-editor-command="redo">恢复</button>
+                            <button class="secondary" type="button" data-format-inline="bold">加粗</button>
+                            <span class="editor-palette" aria-label="文字颜色">
+                              <span>文字</span>
+                              <button type="button" class="color-swatch" style="--swatch:#111111" data-format-inline="color" data-format-value="#111111" aria-label="黑色文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#6B5A45" data-format-inline="color" data-format-value="#6B5A45" aria-label="暖灰文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#8A5A2B" data-format-inline="color" data-format-value="#8A5A2B" aria-label="棕色文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#2F5F55" data-format-inline="color" data-format-value="#2F5F55" aria-label="绿色文字"></button>
+                              <button type="button" class="color-swatch" style="--swatch:#355C8C" data-format-inline="color" data-format-value="#355C8C" aria-label="蓝色文字"></button>
+                            </span>
+                            <button class="secondary" type="button" data-format-inline="size">字号</button>
+                            <span class="editor-palette" aria-label="填充颜色">
+                              <span>填充</span>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#F3E7C8" data-format-inline="highlight" data-format-value="#F3E7C8" aria-label="米色填充"></button>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#E8EFE7" data-format-inline="highlight" data-format-value="#E8EFE7" aria-label="绿色填充"></button>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#E7EDF6" data-format-inline="highlight" data-format-value="#E7EDF6" aria-label="蓝色填充"></button>
+                              <button type="button" class="color-swatch is-fill" style="--swatch:#F1E6E0" data-format-inline="highlight" data-format-value="#F1E6E0" aria-label="暖粉填充"></button>
+                            </span>
+                          </div>
+                          <div class="editor-tool-group">
+                            <button class="secondary" type="button" data-insert-media="image" data-media-lang="cn">插入图片</button>
+                            <button class="secondary" type="button" data-insert-media="gif" data-media-lang="cn">插入动图</button>
+                            <button class="secondary" type="button" data-insert-media="audio" data-media-lang="cn">插入音频</button>
+                            <button class="secondary" type="button" data-insert-media="video" data-media-lang="cn">插入视频</button>
+                          </div>
+                          <span class="word-count" data-word-count="cn">0 字</span>
+                        </div>
+                        <div class="visual-editor" data-visual-editor="cn" contenteditable="true" aria-label="中文攻略正文"></div>
+                        <textarea class="raw-editor" data-raw-editor="cn" placeholder="# 第一次来中国&#10;&#10;把你的旅行攻略直接粘贴在这里。支持简单 Markdown：&#10;&#10;## 支付方式&#10;- 支付宝&#10;- 微信支付&#10;&#10;![上海咖啡馆](assets/image.png)&#10;&#10;CTA: WhatsApp 咨询 | https://wa.me/"></textarea>
+                      </div>
+                    </div>
+                    <article class="guide-preview desktop is-hidden" data-guide-preview></article>
+                    </div>
+                  </main>
+
+                  <aside class="review-panel is-collapsed" data-review-panel>
+                    <p class="eyebrow">发布检查</p>
+                    <nav class="structure-nav" data-structure-nav>
+                      <button type="button" data-jump-section="hero">封面图</button>
+                      <button type="button" data-jump-section="intro">简介</button>
+                      <button type="button" data-jump-section="faq">FAQ 常见问题</button>
+                      <button type="button" data-jump-section="cta">联系按钮</button>
+                      <button type="button" data-jump-section="seo">SEO</button>
+                    </nav>
+                    <div class="editor-checks" data-editor-checks></div>
+                  </aside>
+                </div>
+              </section>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-panel is-hidden" data-panel="cities">
+          <div class="section-heading">
+            <h2>城市内容</h2>
+            <p>管理城市页面、城市导航和城市下的关联内容。</p>
+          </div>
+          <div class="city-cms-layout">
+            <aside class="city-sidebar">
+              <div class="city-sidebar-tools">
+                <input data-city-search placeholder="搜索城市" />
+                <select data-city-filter>
+                  <option value="">全部城市</option>
+                  <option value="active">只看已启用</option>
+                  <option value="nav">只看导航展示</option>
+                </select>
+              </div>
+              <div class="city-list" data-cities-list></div>
+              <button class="secondary city-new-button" type="button" data-new-city>+ 新建城市</button>
+            </aside>
+
+            <form class="city-editor" data-city-form>
+              <input name="id" type="hidden" />
+              <div class="city-editor-heading">
+                <div>
+                  <p class="eyebrow">正在编辑</p>
+                  <h3 data-current-city-title>请选择城市</h3>
+                  <span data-city-page-preview>chinamigo.com/cities/</span>
+                  <small class="city-save-status" data-city-save-status>已保存</small>
+                </div>
+                <div class="city-heading-actions">
+                  <button class="secondary" type="button" data-copy-city-url>复制链接</button>
+                  <button class="secondary" type="button" data-open-city-page>预览城市页</button>
+                  <button type="submit">发布更新</button>
+                </div>
+              </div>
+              <nav class="city-editor-anchors" aria-label="城市编辑快捷导航">
+                <button type="button" data-city-jump="basic">基础信息</button>
+                <button type="button" data-city-jump="display">展示与排序</button>
+                <button type="button" data-city-jump="visual">城市视觉</button>
+                <button type="button" data-city-jump="linked">关联内容</button>
+              </nav>
+
+              <div class="city-editor-grid">
+                <section class="city-editor-card" data-city-section="basic">
+                  <h4>基础信息</h4>
+                  <div class="form-grid">
+                    <label>城市名称<input name="name" required /></label>
+                    <label>URL 标识<input name="slug" placeholder="shanghai" /><small>用于生成城市页面链接，例如 /cities/shanghai。</small></label>
+                    <label class="wide" data-city-extra>短描述<textarea name="shortDescription" rows="2" placeholder="用于城市选择、卡片和小简介"></textarea><small>用于城市卡片、城市 tab 和小型推荐模块。</small></label>
+                    <label class="wide" data-city-extra>长介绍<textarea name="longDescription" rows="5" placeholder="用于城市首页、SEO 摘要和内容推荐"></textarea><small>用于城市详情页、SEO 和页面正文。</small></label>
+                  </div>
+                  <div class="city-live-preview" data-city-card-preview></div>
+                </section>
+
+                <section class="city-editor-card" data-city-section="display">
+                  <h4>展示与排序</h4>
+                  <div class="form-grid">
+                    <label>是否启用城市页<select name="active"><option value="true">启用</option><option value="false">停用</option></select><small>启用后，城市页面可以公开访问。</small></label>
+                    <label>是否显示在前台城市导航<select name="showInNavigation"><option value="true">显示</option><option value="false">不显示</option></select><small>控制是否出现在前台城市导航 tab 中。</small></label>
+                    <label class="wide" data-city-extra>城市导航顺序<input name="sortOrder" type="number" value="0" /><small>数字越小越靠前，也可以在左侧拖拽排序。</small></label>
+                  </div>
+                </section>
+
+                <section class="city-editor-card" data-city-advanced data-city-section="visual">
+                  <h4>城市视觉</h4>
+                  <input name="bannerImage" type="hidden" />
+                  <input name="cardImage" type="hidden" />
+                  <input name="thumbnailImage" type="hidden" />
+                  <input data-city-image-file type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden />
+                  <div class="city-image-preview" data-city-image-preview></div>
+                </section>
+
+                <section class="city-editor-card" data-city-advanced data-city-section="linked">
+                  <h4>关联内容</h4>
+                  <div class="city-linked-summary" data-city-linked-summary></div>
+                  <div class="city-linked-list" data-city-linked-list></div>
+                </section>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-panel is-hidden" data-panel="experiences">
+          <div class="section-heading">
+            <h2>行程方案</h2>
+            <p>结构化管理推荐行程、短体验和前台 Journey Card。</p>
+          </div>
+          <div class="experience-cms-layout">
+            <aside class="experience-sidebar">
+              <div class="city-sidebar-tools">
+                <input data-experience-search placeholder="搜索行程" />
+                <select data-experience-filter-type>
+                  <option value="">全部类型</option>
+                  <option value="recommended_journey">推荐行程</option>
+                  <option value="short_experience">短体验</option>
+                </select>
+              </div>
+              <div class="experience-list" data-experiences-list></div>
+              <button class="secondary city-new-button" type="button" data-new-experience>+ 新建行程</button>
+            </aside>
+
+            <form class="experience-editor" data-experience-form>
+              <input name="id" type="hidden" />
+              <input name="coverImage" type="hidden" />
+              <input name="galleryImages" type="hidden" />
+              <input name="tags" type="hidden" />
+              <textarea name="itineraryDays" hidden></textarea>
+              <textarea name="shortDetails" hidden></textarea>
+              <textarea name="contentBlocks" hidden></textarea>
+              <input data-experience-image-file type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden />
+
+              <div class="city-editor-heading experience-toolbar">
+                <div>
+                  <p class="eyebrow">正在编辑</p>
+                  <h3 data-current-experience-title>请选择行程</h3>
+                  <span data-experience-page-preview>/trips/</span>
+                  <small class="city-save-status" data-experience-completion>完成度 --</small>
+                  <small class="city-save-status" data-experience-save-status>已保存</small>
+                </div>
+                <div class="experience-toolbar-actions">
+                  <button class="secondary" type="button" data-toggle-itinerary-preview>预览行程</button>
+                  <button type="submit">更新线上版本</button>
+                </div>
+              </div>
+
+              <div class="experience-editor-grid">
+                <section class="city-editor-card journey-preview-section">
+                  <div class="experience-section-head">
+                    <div>
+                      <p class="eyebrow">Journey Preview</p>
+                      <h4>Journey Card 预览</h4>
+                    </div>
+                    <div class="journey-preview-modes">
+                      <button class="is-active" type="button" data-journey-preview-mode="desktop">Desktop</button>
+                      <button type="button" data-journey-preview-mode="mobile">Mobile</button>
+                      <button type="button" data-journey-preview-mode="search">Search Result</button>
+                      <button type="button" data-journey-preview-mode="home">Homepage</button>
+                    </div>
+                  </div>
+                  <div class="journey-card-preview" data-journey-card-preview data-preview-mode="desktop"></div>
+                </section>
+
+                <section class="city-editor-card">
+                  <h4>基础信息</h4>
+                  <div class="form-grid">
+                    <label>标题<input name="title" required /></label>
+                    <label>URL 标识<input name="slug" placeholder="shanghai-lifestyle-trip" /><small>用于生成页面链接，例如 /trips/shanghai-lifestyle-trip。</small></label>
+                    <label>城市<select name="city" data-experience-city-select></select><small>请选择城市，不要手动输入。</small></label>
+                    <label>类型<select name="type" data-experience-type><option value="recommended_journey">推荐行程</option><option value="short_experience">短体验</option></select></label>
+                    <label>时长<input name="duration" placeholder="3-5 Days" /></label>
+                    <label>发布状态<select name="published"><option value="true">已发布</option><option value="false">草稿</option></select></label>
+                    <label class="wide">简介<textarea name="excerpt" rows="3" placeholder="用于前台卡片和行程详情页简介"></textarea></label>
+                    <label class="wide">排序<input name="sortOrder" type="number" value="0" /><small>数字越小越靠前。</small></label>
+                  </div>
+                </section>
+
+                <section class="city-editor-card">
+                  <h4>图片管理</h4>
+                  <div class="experience-image-manager">
+                    <div class="experience-cover-upload" data-experience-cover-drop>
+                      <div data-experience-cover-preview></div>
+                      <button class="secondary" type="button" data-open-media-picker="experience-cover">从素材库选择</button>
+                      <button class="secondary" type="button" data-upload-experience-cover>上传 / 更换封面</button>
+                      <button class="secondary" type="button" data-clear-experience-cover>删除封面</button>
+                    </div>
+                    <div>
+                      <p class="eyebrow">图片组</p>
+                      <div class="experience-gallery" data-experience-gallery></div>
+                      <button class="secondary" type="button" data-open-media-picker="experience-gallery">从素材库添加</button>
+                      <button class="secondary" type="button" data-upload-experience-gallery>上传图片</button>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="city-editor-card">
+                  <div class="experience-section-head">
+                    <h4>标签</h4>
+                    <button class="secondary" type="button" data-ai-suggest-tags>AI 推荐标签</button>
+                  </div>
+                  <div class="tag-selector" data-experience-tags></div>
+                  <div class="tag-add-row">
+                    <input data-new-experience-tag placeholder="新增标签，例如 Family" />
+                    <button class="secondary" type="button" data-add-experience-tag>添加标签</button>
+                  </div>
+                </section>
+
+                <section class="city-editor-card" data-journey-editor>
+                  <div class="experience-section-head">
+                    <div>
+                      <p class="eyebrow">Journey Structure</p>
+                      <h4>Day-by-Day 行程编辑</h4>
+                    </div>
+                    <div class="day-builder-actions">
+                      <button class="secondary subtle-ai" type="button" data-ai-optimize-day>✨ 优化节奏</button>
+                    </div>
+                  </div>
+                  <div class="day-editor-layout">
+                    <aside>
+                      <div class="day-list" data-day-list></div>
+                      <button class="secondary" type="button" data-add-day>+ 新增 Day</button>
+                    </aside>
+                    <div class="day-fields" data-day-fields></div>
+                  </div>
+                  <aside class="itinerary-live-preview" data-itinerary-preview></aside>
+                </section>
+
+                <section class="city-editor-card is-hidden" data-short-editor>
+                  <h4>短体验编辑</h4>
+                  <div class="form-grid">
+                    <label>地点 / 区域<input data-short-field="location" placeholder="French Concession / The Bund" /></label>
+                    <label>预约方式<input data-short-field="bookingMethod" placeholder="Private concierge / reservation required" /></label>
+                    <label class="wide">亮点<textarea data-short-field="highlights" rows="3" placeholder="适合放 3-5 个体验亮点"></textarea></label>
+                    <label class="wide">注意事项<textarea data-short-field="notes" rows="3" placeholder="开放时间、语言、交通、适合人群等"></textarea></label>
+                  </div>
+                </section>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-panel is-hidden" data-panel="media">
+          <div class="section-heading">
+            <h2>素材中心</h2>
+            <p>全站统一图片库。上传后可在攻略、城市和行程编辑里直接选择使用。</p>
+          </div>
+          <div class="media-toolbar">
+            <input data-media-search placeholder="搜索文件名、标签、城市或使用页面" />
+            <select data-media-category-filter>
+              <option value="">全部图片</option>
+              <option value="unused">未使用图片</option>
+              <option value="guides">攻略图片</option>
+              <option value="trips">行程图片</option>
+              <option value="cities">城市图片</option>
+              <option value="home">首页图片</option>
+              <option value="about">About 图片</option>
+              <option value="common">通用素材</option>
+              <option value="recent">最近上传</option>
+            </select>
+          </div>
+          <form class="editor-form" data-media-form>
+            <div class="form-grid">
+              <label>图片分类<select name="category">
+                <option value="guides">攻略图片</option>
+                <option value="trips">行程图片</option>
+                <option value="cities">城市图片</option>
+                <option value="home">首页图片</option>
+                <option value="about">About 图片</option>
+                <option value="common">通用素材</option>
+              </select></label>
+              <label>标签<input name="tags" placeholder="Shanghai, Hotel, Cafe, Luxury" /></label>
+              <label>图片说明<input name="alt" /></label>
+              <label>上传图片 / GIF<input name="file" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple required /></label>
+            </div>
+            <div class="form-actions">
+              <button type="submit">上传素材</button>
+            </div>
+          </form>
+          <div class="list media-grid" data-media-list></div>
+        </section>
+
+        <section class="admin-panel is-hidden" data-panel="templates">
+          <div class="section-heading">
+            <div>
+              <h2>模板中心</h2>
+              <p>统一管理 WhatsApp / Email 话术，客户详情里只在需要发送时插入。</p>
+            </div>
+            <button type="button" data-new-template>新建模板</button>
+          </div>
+          <div class="template-cms-layout">
+            <aside class="template-sidebar">
+              <input data-template-search placeholder="搜索模板" />
+              <div class="template-category-list" data-template-categories></div>
+            </aside>
+            <div class="template-list-panel">
+              <div class="template-list" data-template-list></div>
+            </div>
+            <form class="template-editor" data-template-form>
+              <input name="id" type="hidden" />
+              <div class="template-editor-head">
+                <div>
+                  <p class="eyebrow">话术编辑</p>
+                  <h3 data-current-template-title>请选择模板</h3>
+                  <span data-template-save-status>已保存</span>
+                </div>
+                <button type="submit">保存模板</button>
+              </div>
+              <div class="form-grid">
+                <label>模板名称<input name="title" required /></label>
+                <label>分类<input name="category" placeholder="欢迎 / 报价 / 跟进" /></label>
+                <label>渠道<select name="channel"><option>WhatsApp</option><option>Email</option><option>微信</option></select></label>
+                <label>语言<select name="language"><option>EN</option><option>中文</option></select></label>
+                <label>图标<input name="icon" placeholder="✨" /></label>
+                <label>排序<input name="sortOrder" type="number" value="0" /></label>
+                <label class="wide">模板内容<textarea name="body" rows="8" placeholder="支持变量：{{name}} {{city}} {{dates}} {{travelers}} {{stayLevel}}"></textarea></label>
+              </div>
+              <div class="template-preview-box">
+                <p class="eyebrow">变量预览</p>
+                <div data-template-preview>选择模板后显示预览。</div>
+              </div>
+              <div class="form-actions">
+                <button class="secondary" type="button" data-ai-polish-template>AI 润色</button>
+                <button class="secondary" type="button" data-duplicate-template>复制为新模板</button>
+                <button class="secondary" type="button" data-delete-template>删除模板</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <p class="status" data-status></p>
+        <div class="admin-toast" data-toast></div>
+        <div class="media-modal is-hidden" data-media-modal>
+          <div class="media-modal-backdrop" data-close-media-picker></div>
+          <section class="media-modal-panel">
+            <header>
+              <div>
+                <p class="eyebrow">素材库</p>
+                <h3 data-media-picker-title>选择图片</h3>
+              </div>
+              <button class="secondary" type="button" data-close-media-picker>关闭</button>
+            </header>
+            <div class="media-modal-tools">
+              <input data-picker-search placeholder="搜索图片、标签或使用页面" />
+              <select data-picker-category>
+                <option value="">全部图片</option>
+                <option value="guides">攻略图片</option>
+                <option value="trips">行程图片</option>
+                <option value="cities">城市图片</option>
+                <option value="home">首页图片</option>
+                <option value="about">About 图片</option>
+                <option value="common">通用素材</option>
+                <option value="unused">未使用图片</option>
+              </select>
+              <label class="media-upload-inline">
+                上传新图片
+                <input data-picker-upload type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple />
+              </label>
+            </div>
+            <div class="media-modal-grid" data-picker-grid></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

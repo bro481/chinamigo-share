@@ -1,0 +1,165 @@
+[
+  {
+    "id": "experience-shanghai-lifestyle-trip",
+    "title": "Shanghai Lifestyle Trip",
+    "slug": "shanghai-lifestyle-trip",
+    "city": "shanghai",
+    "type": "recommended_journey",
+    "duration": "4-5 Days",
+    "excerpt": "Luxury stays, skyline mornings and modern local experiences.",
+    "coverImage": "assets/experience-shanghai-lifestyle.png",
+    "galleryImages": [
+      "assets/experience-shanghai-lifestyle.png",
+      "assets/guide-shanghai-cafes.png"
+    ],
+    "tags": [
+      "Private",
+      "Shanghai",
+      "Lifestyle"
+    ],
+    "itineraryDays": [
+      {
+        "title": "Day 1 — Arrival & Slow Evening",
+        "morning": "Airport arrival and private hotel coordination are arranged before you land.",
+        "afternoon": "Check in slowly, rest at the hotel and adjust the evening timing around your energy.",
+        "evening": "Private riverside dinner with an easy skyline walk if you feel like going out.",
+        "stayNotes": "Bund skyline hotel or similar.",
+        "image": "assets/experience-shanghai-lifestyle.png"
+      },
+      {
+        "title": "Day 2 — Local Rhythm",
+        "morning": "A slower breakfast followed by French Concession cafes and quiet neighborhood streets.",
+        "afternoon": "Boutique shopping, local design stops and private transport between areas.",
+        "evening": "Rooftop cocktails or a low-key dinner reservation with timing handled for you.",
+        "stayNotes": "Flexible route depending on weather and your pace.",
+        "image": "assets/guide-shanghai-cafes.png"
+      },
+      {
+        "title": "Day 3 — Flexible Departure",
+        "morning": "Wellness breakfast, final cafe time or a short local errand before checkout.",
+        "afternoon": "Chauffeur transfer to the airport or station with luggage coordination.",
+        "evening": "Optional extension support if your flight departs late.",
+        "stayNotes": "Airport or station support included.",
+        "image": "assets/hero-china-concierge.png"
+      }
+    ],
+    "shortDetails": {
+      "location": "",
+      "highlights": "",
+      "bookingMethod": "",
+      "notes": ""
+    },
+    "contentBlocks": [
+      {
+        "id": "day-1",
+        "type": "itinerary_day",
+        "title": "Day 1 — Arrival & Slow Evening",
+        "body": "",
+        "morning": "Airport arrival and private hotel coordination are arranged before you land.",
+        "afternoon": "Check in slowly, rest at the hotel and adjust the evening timing around your energy.",
+        "evening": "Private riverside dinner with an easy skyline walk if you feel like going out.",
+        "stayNotes": "Bund skyline hotel or similar.",
+        "image": "assets/experience-shanghai-lifestyle.png",
+        "alt": "",
+        "items": [],
+        "href": "",
+        "label": ""
+      },
+      {
+        "id": "day-2",
+        "type": "itinerary_day",
+        "title": "Day 2 — Local Rhythm",
+        "body": "",
+        "morning": "A slower breakfast followed by French Concession cafes and quiet neighborhood streets.",
+        "afternoon": "Boutique shopping, local design stops and private transport between areas.",
+        "evening": "Rooftop cocktails or a low-key dinner reservation with timing handled for you.",
+        "stayNotes": "Flexible route depending on weather and your pace.",
+        "image": "assets/guide-shanghai-cafes.png",
+        "alt": "",
+        "items": [],
+        "href": "",
+        "label": ""
+      },
+      {
+        "id": "day-3",
+        "type": "itinerary_day",
+        "title": "Day 3 — Flexible Departure",
+        "body": "",
+        "morning": "Wellness breakfast, final cafe time or a short local errand before checkout.",
+        "afternoon": "Chauffeur transfer to the airport or station with luggage coordination.",
+        "evening": "Optional extension support if your flight departs late.",
+        "stayNotes": "Airport or station support included.",
+        "image": "assets/hero-china-concierge.png",
+        "alt": "",
+        "items": [],
+        "href": "",
+        "label": ""
+      }
+    ],
+    "sortOrder": 1,
+    "published": true,
+    "createdAt": "2026-05-16T00:00:00.000Z",
+    "updatedAt": "2026-05-24T13:46:39.560Z"
+  },
+  {
+    "id": "experience-shenzhen-tech-journey",
+    "title": "Shenzhen Tech Journey",
+    "slug": "shenzhen-tech-journey",
+    "city": "shenzhen",
+    "type": "recommended_journey",
+    "duration": "2-4 Days",
+    "excerpt": "Innovation, sourcing and founder lifestyle support.",
+    "coverImage": "assets/experience-shenzhen-tech-journey.png",
+    "galleryImages": [],
+    "tags": [
+      "Shenzhen",
+      "Innovation",
+      "Private"
+    ],
+    "contentBlocks": [],
+    "sortOrder": 1,
+    "published": true,
+    "createdAt": "2026-05-16T00:00:00.000Z",
+    "updatedAt": "2026-05-16T00:00:00.000Z"
+  },
+  {
+    "id": "experience-modern-shanghai-starter",
+    "title": "Modern Shanghai Starter",
+    "slug": "modern-shanghai-starter",
+    "city": "shanghai",
+    "type": "recommended_journey",
+    "duration": "3 Days",
+    "excerpt": "A soft first-time route through stays, cafes, neighborhoods and essentials.",
+    "coverImage": "assets/guide-first-time-china.png",
+    "galleryImages": [],
+    "tags": [
+      "First-time visitors",
+      "Concierge support"
+    ],
+    "contentBlocks": [],
+    "sortOrder": 2,
+    "published": true,
+    "createdAt": "2026-05-16T00:00:00.000Z",
+    "updatedAt": "2026-05-16T00:00:00.000Z"
+  },
+  {
+    "id": "experience-french-concession-cafe-walk",
+    "title": "French Concession Cafe Walk",
+    "slug": "french-concession-cafe-walk",
+    "city": "shanghai",
+    "type": "short_experience",
+    "duration": "4 Hours",
+    "excerpt": "Coffee, quiet streets and slower local neighborhoods.",
+    "coverImage": "assets/guide-shanghai-cafes.png",
+    "galleryImages": [],
+    "tags": [
+      "Cafes",
+      "Neighborhoods"
+    ],
+    "contentBlocks": [],
+    "sortOrder": 10,
+    "published": true,
+    "createdAt": "2026-05-16T00:00:00.000Z",
+    "updatedAt": "2026-05-16T00:00:00.000Z"
+  }
+]

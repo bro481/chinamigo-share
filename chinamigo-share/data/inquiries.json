@@ -1,0 +1,32 @@
+[
+  {
+    "id": "inquiry-1781006140889",
+    "createdAt": "2026-06-09T11:55:40.889Z",
+    "updatedAt": "2026-06-09T11:55:40.889Z",
+    "name": "ws",
+    "email": "1165096788dj@gmail.com",
+    "phone": "12233",
+    "travelDates": "may1-12",
+    "travelers": "2",
+    "citiesInterestedIn": "Shanghai",
+    "preferredStayLevel": "Boutique hotel",
+    "tripStyle": [
+      "Slow Travel",
+      "Food & Café",
+      "Design Hotels"
+    ],
+    "tags": [],
+    "notes": "",
+    "sourcePage": "/trips",
+    "status": "new",
+    "internalNotes": "",
+    "statusHistory": [],
+    "activity": [
+      {
+        "type": "submitted",
+        "label": "Inquiry submitted",
+        "at": "2026-06-09T11:55:40.889Z"
+      }
+    ]
+  }
+]

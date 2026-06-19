@@ -1,0 +1,80 @@
+[
+  {
+    "id": "first-time-in-china",
+    "slug": "first-time-in-china",
+    "title": "secondTime in China",
+    "description": "Arrival, payments, apps, rail and local basics for new visitors.",
+    "categories": [
+      "Payments",
+      "Apps",
+      "Transportation"
+    ],
+    "guideSlugs": [
+      "can-tourists-use-alipay",
+      "china-high-speed-rail-guide"
+    ],
+    "image": "assets/guide-first-time-china.png",
+    "sortOrder": 1,
+    "active": true,
+    "createdAt": "2026-06-09T00:00:00.000Z",
+    "updatedAt": "2026-06-09T11:59:51.282Z"
+  },
+  {
+    "id": "digital-china-essentials",
+    "slug": "digital-china-essentials",
+    "title": "Digital China Essentials",
+    "description": "Payments, mobile data, maps, translation and everyday apps.",
+    "categories": [
+      "Payments",
+      "Apps"
+    ],
+    "guideSlugs": [
+      "can-tourists-use-alipay",
+      "internet-setup-in-china",
+      "essential-apps-for-china"
+    ],
+    "image": "assets/guide-alipay-tourists.png",
+    "sortOrder": 2,
+    "active": true,
+    "createdAt": "2026-06-09T00:00:00.000Z",
+    "updatedAt": "2026-06-09T00:00:00.000Z"
+  },
+  {
+    "id": "getting-around-china",
+    "slug": "getting-around-china",
+    "title": "Getting Around China",
+    "description": "High-speed rail, taxis, metro, airports and city-to-city travel.",
+    "categories": [
+      "Transportation"
+    ],
+    "guideSlugs": [
+      "china-high-speed-rail-guide"
+    ],
+    "image": "assets/guide-high-speed-rail.png",
+    "sortOrder": 3,
+    "active": true,
+    "createdAt": "2026-06-09T00:00:00.000Z",
+    "updatedAt": "2026-06-09T00:00:00.000Z"
+  },
+  {
+    "id": "local-life-and-places",
+    "slug": "local-life-and-places",
+    "title": "Local Life & Places",
+    "description": "Food, neighborhoods, stays, shopping and hidden local spots.",
+    "categories": [
+      "Food & Cafes",
+      "Lifestyle",
+      "Shopping"
+    ],
+    "guideSlugs": [
+      "best-cafes-in-shanghai",
+      "modern-local-discoveries",
+      "shenzhen-electronics-market-guide"
+    ],
+    "image": "assets/guide-shanghai-cafes.png",
+    "sortOrder": 4,
+    "active": true,
+    "createdAt": "2026-06-09T00:00:00.000Z",
+    "updatedAt": "2026-06-09T00:00:00.000Z"
+  }
+]

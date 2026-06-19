@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ChinaMigo guide collections help international visitors read practical China travel guides in a useful order."
+    />
+    <title>ChinaMigo Guide Collection</title>
+    <link rel="stylesheet" href="/styles.css?v=contact-layout-20260607" />
+    <script src="/site.js?v=i18n-contact-layout-20260607" defer></script>
+  </head>
+  <body class="guides-page-body collection-page-body">
+    <header class="site-header guides-header is-compact" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="ChinaMigo home">
+        <span>China</span><strong>Migo</strong>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/" aria-current="page">China Guides</a>
+        <a href="/trips">Trips & Services</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <a
+        class="pill-button dark header-cta"
+        href="https://wa.me/8613800000000?text=Hi%20ChinaMigo%2C%20I%27d%20like%20help%20planning%20my%20China%20visit."
+        aria-label="Chat with ChinaMigo on WhatsApp"
+      >
+        <span>WhatsApp</span>
+      </a>
+    </header>
+
+    <main class="collection-page" data-collection-page>
+      <section class="collection-intro">
+        <a class="article-back" href="/">← Back to China Guides</a>
+        <h1 data-collection-title>First Time in China</h1>
+        <p data-collection-subtitle>
+          Arrival, payments, apps, transport and everyday basics for first-time visitors.
+        </p>
+        <div class="collection-tags" data-collection-tags></div>
+      </section>
+
+      <section class="collection-reading-path" aria-label="Recommended reading order">
+        <div class="collection-section-heading">
+          <h2 data-collection-count>Recommended order</h2>
+        </div>
+        <div class="collection-guide-list" data-collection-guides></div>
+      </section>
+
+      <section class="collection-help" aria-label="ChinaMigo help">
+        <div>
+          <h2>Need help planning this in China?</h2>
+          <p>Tell us your city, dates and main questions. We’ll suggest the right next step.</p>
+        </div>
+        <a
+          class="pill-button dark"
+          href="https://wa.me/8613800000000?text=Hi%20ChinaMigo%2C%20I%27d%20like%20help%20with%20China%20travel%20guides."
+        >
+          Talk to ChinaMigo
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>ChinaMigo</span>
+      <span>Private China concierge for global visitors.</span>
+    </footer>
+
+    <script>
+      const guideArticles = {
+        "before-you-arrive-in-china": {
+          title: "Before You Arrive in China",
+          category: "First Time",
+          readTime: "6 min read",
+          excerpt: "Documents, payments, internet and arrival basics to prepare before landing.",
+          coverImage: "/assets/guide-first-time-china.png",
+          coverAlt: "Visitor arriving in modern China by high-speed rail",
+          focalPoint: "center"
+        },
+        "can-tourists-use-alipay": {
+          title: "Can Tourists Use Alipay in China?",
+          category: "Payments",
+          readTime: "5 min read",
+          excerpt: "Set up payment before you arrive, so taxis, cafes and train stations feel easier.",
+          coverImage: "/assets/guide-alipay-tourists.png",
+          coverAlt: "Traveler paying with a phone in a modern Chinese cafe",
+          focalPoint: "center"
+        },
+        "how-to-use-wechat-pay": {
+          title: "How to Use WeChat Pay",
+          category: "Payments",
+          readTime: "5 min read",
+          excerpt: "What visitors should know about WeChat Pay, verification and backup options.",
+          coverImage: "/assets/guide-alipay-tourists.png",
+          coverAlt: "Traveler using mobile payment in China",
+          focalPoint: "center"
+        },
+        "best-esim-for-china": {
+          title: "Best eSIM for China",
+          category: "Apps",
+          readTime: "4 min read",
+          excerpt: "Mobile data choices, setup timing and practical tips before arrival.",
+          coverImage: "/assets/experience-china-cafes.png",
+          coverAlt: "Traveler using internet in a modern Chinese cafe",
+          focalPoint: "center"
+        },
+        "essential-apps-for-china": {
+          title: "Essential Apps for China",
+          category: "Apps",
+          readTime: "5 min read",
+          excerpt: "Maps, translation, payments, ride-hailing and everyday apps visitors actually use.",
+          coverImage: "/assets/guide-first-time-china.png",
+          coverAlt: "Visitor using a smartphone while navigating modern China",
+          focalPoint: "center"
+        },
+        "china-high-speed-rail-guide": {
+          title: "China High-Speed Rail Guide",
+          category: "Transportation",
+          readTime: "6 min read",
+          excerpt: "Tickets, stations, passports and what to expect on China’s high-speed rail.",
+          coverImage: "/assets/guide-high-speed-rail.png",
+          coverAlt: "International visitor at a modern high-speed rail station in China",
+          focalPoint: "center"
+        },
+        "how-to-take-a-taxi-in-china": {
+          title: "How to Take a Taxi in China",
+          category: "Transportation",
+          readTime: "4 min read",
+          excerpt: "Taxi basics, ride-hailing notes and address tips for international visitors.",
+          coverImage: "/assets/guide-first-time-china.png",
+          coverAlt: "Visitor using a phone while moving through modern China",
+          focalPoint: "center"
+        },
+        "hotel-check-in-tips": {
+          title: "Hotel Check-in Tips",
+          category: "Hotels",
+          readTime: "4 min read",
+          excerpt: "Passport checks, deposits, timing and what to prepare at Chinese hotels.",
+          coverImage: "/assets/service-vip-custom-trip.png",
+          coverAlt: "Calm hotel and concierge planning moment",
+          focalPoint: "center"
+        },
+        "china-safety-basics": {
+          title: "China Safety Basics",
+          category: "Safety",
+          readTime: "5 min read",
+          excerpt: "Everyday safety notes, emergency basics and simple habits for smoother travel.",
+          coverImage: "/assets/experience-local-discoveries.png",
+          coverAlt: "Quiet local neighborhood in modern China",
+          focalPoint: "center"
+        },
+        "internet-setup-in-china": {
+          title: "Internet Setup in China",
+          category: "Apps",
+          readTime: "4 min read",
+          excerpt: "SIM cards, eSIM options, Wi-Fi and everyday connection tips.",
+          coverImage: "/assets/experience-china-cafes.png",
+          coverAlt: "Traveler working from a modern Chinese cafe",
+          focalPoint: "center"
+        },
+        "translation-apps-in-china": {
+          title: "Translation Apps in China",
+          category: "Apps",
+          readTime: "4 min read",
+          excerpt: "Translation tools for menus, taxis, hotel desks and everyday questions.",
+          coverImage: "/assets/guide-first-time-china.png",
+          coverAlt: "Visitor using a phone in China",
+          focalPoint: "center"
+        },
+        "map-apps-for-china": {
+          title: "Map Apps for China",
+          category: "Apps",
+          readTime: "4 min read",
+          excerpt: "What to use when familiar map apps are less reliable in China.",
+          coverImage: "/assets/guide-first-time-china.png",
+          coverAlt: "Visitor navigating China with a phone",
+          focalPoint: "center"
+        },
+        "ride-hailing-apps-in-china": {
+          title: "Ride-hailing Apps in China",
+          category: "Transportation",
+          readTime: "5 min read",
+          excerpt: "How visitors can think about Didi, taxis, pickup points and payment.",
+          coverImage: "/assets/guide-first-time-china.png",
+          coverAlt: "Visitor using ride-hailing in modern China",
+          focalPoint: "center"
+        },
+        "food-delivery-apps-in-china": {
+          title: "Food Delivery Apps in China",
+          category: "Apps",
+          readTime: "4 min read",
+          excerpt: "When food delivery helps, where it gets tricky and what visitors should know.",
+          coverImage: "/assets/guide-shanghai-cafes.png",
+          coverAlt: "Modern cafe and food moment in China",
+          focalPoint: "center"
+        },
+        "how-to-buy-train-tickets": {
+          title: "How to Buy Train Tickets",
+          category: "Transportation",
+          readTime: "5 min read",
+          excerpt: "Booking channels, passport names and timing for intercity train travel.",
+          coverImage: "/assets/guide-high-speed-rail.png",
+          coverAlt: "China high-speed rail station",
+          focalPoint: "center"
+        },
+        "how-to-take-the-metro-in-china": {
+          title: "How to Take the Metro in China",
+          category: "Transportation",
+          readTime: "4 min read",
+          excerpt: "Tickets, security checks, signs and rush-hour basics in Chinese cities.",
+          coverImage: "/assets/guide-high-speed-rail.png",
+          coverAlt: "Modern public transport station in China",
+          focalPoint: "center"
+        },
+        "airport-transfer-guide": {
+          title: "Airport Transfer Guide",
+          category: "Transportation",
+          readTime: "5 min read",
+          excerpt: "Pickup points, luggage timing, taxis and private transfer options.",
+          coverImage: "/assets/service-vip-custom-trip.png",
+          coverAlt: "Private concierge transfer planning moment",
+          focalPoint: "center"
+        },
+        "city-to-city-travel-tips": {
+          title: "City-to-City Travel Tips",
+          category: "Transportation",
+          readTime: "5 min read",
+          excerpt: "How to choose between rail, flights and private transfers across China.",
+          coverImage: "/assets/guide-high-speed-rail.png",
+          coverAlt: "High-speed rail travel in China",
+          focalPoint: "center"
+        },
+        "what-to-know-at-train-stations": {
+          title: "What to Know at Train Stations",
+          category: "Transportation",
+          readTime: "5 min read",
+          excerpt: "Security, gates, passport checks and timing inside large rail stations.",
+          coverImage: "/assets/guide-high-speed-rail.png",
+          coverAlt: "Large modern rail station in China",
+          focalPoint: "center"
+        },
+        "best-cafes-in-shanghai": {
+          title: "Best Cafes in Shanghai",
+          category: "Food & Cafes",
+          readTime: "4 min read",
+          excerpt: "Modern local lifestyle and coffee culture for visitors.",
+          coverImage: "/assets/guide-shanghai-cafes.png",
+          coverAlt: "Modern Shanghai cafe with warm morning light",
+          focalPoint: "center"
+        },
+        "where-to-stay-in-shanghai": {
+          title: "Where to Stay in Shanghai",
+          category: "Hotels",
+          readTime: "5 min read",
+          excerpt: "Areas, hotel styles and how to choose a base for your first Shanghai stay.",
+          coverImage: "/assets/service-vip-custom-trip.png",
+          coverAlt: "Calm hotel and city planning scene",
+          focalPoint: "center"
+        },
+        "local-food-guide": {
+          title: "Local Food Guide",
+          category: "Food & Cafes",
+          readTime: "5 min read",
+          excerpt: "Simple ways to understand local food, breakfast, restaurants and ordering.",
+          coverImage: "/assets/guide-shanghai-cafes.png",
+          coverAlt: "Local food and cafe scene in China",
+          focalPoint: "center"
+        },
+        "hidden-neighborhoods": {
+          title: "Hidden Neighborhoods",
+          category: "Food & Cafes",
+          readTime: "5 min read",
+          excerpt: "Quieter streets, cafes and everyday local areas beyond major landmarks.",
+          coverImage: "/assets/experience-local-discoveries.png",
+          coverAlt: "Quiet neighborhood discovery in China",
+          focalPoint: "center"
+        },
+        "shopping-tips-in-china": {
+          title: "Shopping Tips in China",
+          category: "Shopping",
+          readTime: "5 min read",
+          excerpt: "Payments, sizing, markets, receipts and how to shop with less friction.",
+          coverImage: "/assets/service-shopping-sourcing.png",
+          coverAlt: "Shopping and sourcing support in China",
+          focalPoint: "center"
+        },
+        "chinese-dining-etiquette": {
+          title: "Chinese Dining Etiquette",
+          category: "Food & Cafes",
+          readTime: "4 min read",
+          excerpt: "Table basics, sharing dishes and small habits that make meals easier.",
+          coverImage: "/assets/guide-shanghai-cafes.png",
+          coverAlt: "Dining and cafe moment in China",
+          focalPoint: "center"
+        },
+        "modern-shanghai-lifestyle-guide": {
+          title: "Modern Shanghai Lifestyle Guide",
+          category: "Food & Cafes",
+          readTime: "5 min read",
+          excerpt: "Cafes, neighborhoods, design stops and everyday city rhythm.",
+          coverImage: "/assets/experience-shanghai-lifestyle.png",
+          coverAlt: "Modern Shanghai lifestyle and skyline atmosphere",
+          focalPoint: "center"
+        }
+      };
+
+      const collections = {
+        "first-time-in-china": {
+          title: "First Time in China",
+          subtitle: "Arrival, payments, apps, transport and everyday basics for first-time visitors.",
+          tags: ["First-time visitors", "Family trips", "Before arrival"],
+          selectedGuides: [
+            "before-you-arrive-in-china",
+            "can-tourists-use-alipay",
+            "how-to-use-wechat-pay",
+            "best-esim-for-china",
+            "essential-apps-for-china",
+            "china-high-speed-rail-guide",
+            "how-to-take-a-taxi-in-china",
+            "hotel-check-in-tips",
+            "china-safety-basics"
+          ]
+        },
+        "digital-china-essentials": {
+          title: "Digital China Essentials",
+          subtitle: "Payments, mobile data, maps, translation and everyday apps.",
+          tags: ["Payments", "Mobile data", "Apps"],
+          selectedGuides: [
+            "can-tourists-use-alipay",
+            "how-to-use-wechat-pay",
+            "best-esim-for-china",
+            "essential-apps-for-china",
+            "translation-apps-in-china",
+            "map-apps-for-china",
+            "ride-hailing-apps-in-china",
+            "food-delivery-apps-in-china"
+          ]
+        },
+        "getting-around-china": {
+          title: "Getting Around China",
+          subtitle: "Rail, taxis, metro, airports and city-to-city travel.",
+          tags: ["Rail", "Taxi", "Airport transfers"],
+          selectedGuides: [
+            "airport-transfer-guide",
+            "how-to-take-the-metro-in-china",
+            "china-high-speed-rail-guide",
+            "how-to-buy-train-tickets",
+            "what-to-know-at-train-stations",
+            "how-to-take-a-taxi-in-china",
+            "ride-hailing-apps-in-china",
+            "city-to-city-travel-tips"
+          ]
+        },
+        "local-life-and-places": {
+          title: "Local Life & Places",
+          subtitle: "Food, neighborhoods, stays, shopping and hidden local spots.",
+          tags: ["Food", "Neighborhoods", "Where to stay"],
+          selectedGuides: [
+            "best-cafes-in-shanghai",
+            "where-to-stay-in-shanghai",
+            "local-food-guide",
+            "hidden-neighborhoods",
+            "shopping-tips-in-china",
+            "chinese-dining-etiquette",
+            "modern-shanghai-lifestyle-guide"
+          ]
+        }
+      };
+
+      const slug = location.pathname.split("/").filter(Boolean).at(-1);
+      const collection = collections[slug] || collections["first-time-in-china"];
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function guideHref(slug) {
+        const returnTo = location.pathname;
+        const returnLabel = collection.title;
+        return `/guides/${slug}?returnTo=${encodeURIComponent(returnTo)}&returnLabel=${encodeURIComponent(returnLabel)}`;
+      }
+
+      function guideCard(slug, index) {
+        const guide = guideArticles[slug];
+        if (!guide) return "";
+        const orderNumber = String(index + 1).padStart(2, "0");
+        return `<a class="collection-guide-card" href="${guideHref(slug)}">
+          <span class="collection-guide-number">${orderNumber}</span>
+          <img src="${escapeHtml(guide.coverImage)}" alt="${escapeHtml(guide.coverAlt || guide.title)}" style="object-position:${escapeHtml(guide.focalPoint || "center")}" />
+          <div>
+            <span>${escapeHtml(guide.category)} · ${escapeHtml(guide.readTime)}</span>
+            <h3>${escapeHtml(guide.title)}</h3>
+            <p>${escapeHtml(guide.excerpt)}</p>
+          </div>
+        </a>`;
+      }
+
+      document.title = `${collection.title} | ChinaMigo`;
+      document.querySelector("[data-collection-title]").textContent = collection.title;
+      document.querySelector("[data-collection-subtitle]").textContent = collection.subtitle;
+      document.querySelector("[data-collection-tags]").innerHTML = collection.tags
+        .map((tag) => `<span>${escapeHtml(tag)}</span>`)
+        .join("");
+      document.querySelector("[data-collection-count]").textContent = `Recommended order · ${collection.selectedGuides.length} guides`;
+      document.querySelector("[data-collection-guides]").innerHTML = collection.selectedGuides.map(guideCard).join("");
+    </script>
+  </body>
+</html>
