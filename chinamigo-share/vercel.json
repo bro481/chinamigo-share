@@ -1,0 +1,41 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/guides.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/trips",
+      "destination": "/trips.html"
+    },
+    {
+      "source": "/trips/:slug",
+      "destination": "/trip-detail.html"
+    },
+    {
+      "source": "/guides/:slug",
+      "destination": "/guide-detail.html"
+    },
+    {
+      "source": "/guides/collections/:slug",
+      "destination": "/guide-collection.html"
+    },
+    {
+      "source": "/city-experiences",
+      "destination": "/city-experiences.html"
+    }
+  ]
+}
